@@ -71,8 +71,9 @@ const Precio = styled.p`
 
 const Formulario = ({ cargando, resultado, guardarMoneda, guardarCriptomoneda }) => {
 
-
+  
     // Configuración del modal de material-ui
+
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
 
@@ -88,7 +89,6 @@ const Formulario = ({ cargando, resultado, guardarMoneda, guardarCriptomoneda })
     const handleClose = () => {
         setOpen(false);
     }
-
 
 
     const [error, guardarError] = useState(false)
@@ -128,21 +128,16 @@ const Formulario = ({ cargando, resultado, guardarMoneda, guardarCriptomoneda })
         guardarMoneda(moneda)
         guardarCriptomoneda(cripto)
 
-
-
     }
 
 
-
-
     return (
+        <>
 
 
         <form
             onSubmit={cotizar}
         >
-
-
 
             {error ? <Error mensaje="Todos los campos son obligatorios" /> : (
 
@@ -169,7 +164,6 @@ const Formulario = ({ cargando, resultado, guardarMoneda, guardarCriptomoneda })
 
             )}
 
-
             <SelectMoneda />
 
             <SelectCripto />
@@ -181,6 +175,12 @@ const Formulario = ({ cargando, resultado, guardarMoneda, guardarCriptomoneda })
 
             />
         </form>
+
+       
+
+        </>
+
+        
 
 
     );
